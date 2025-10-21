@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/second.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      
+      <div class="section-heading-container">
+        <button
+          class="btn btn-color-3"
+          onclick="window.location.href='/'"
+        >
+          <span>Back to Home</span>
+        </button>
+      </div>
+
+      <section id="projects1">
+        <div class="section-heading-container">
+          <p class="section__text__p1">Showcasing My</p>
+          <h1 class="title">Software Development Projects</h1>
+        </div>
+        <div class="projects-container">
+          <div class="project-card">
+            <h2>Wifi Key Viewer [VB]</h2>
+            <p>
+              The Wifi Key Viewer is a Windows application developed in Visual
+              Basic that allows users to view saved Wi-Fi passwords on their
+              system. It offers a user-friendly interface for retrieving and
+              displaying passwords stored
+            </p>
+            <img
+              src="./assets/pass_coding_projects/app-vbnet-wifi-key-checker.png"
+              alt="Project 1"
+              class="project-img"
+            />
+            <button
+              class="btn btn-color-2 project-btn"
+              onclick="window.open('https://github.com/nikazizi563/vb-Wifi-Password-Viewer/', '_blank')"
+            >
+              Github
+            </button>
+          </div>
+          <div class="project-card">
+            <h2>GPA Calculator [CPP]</h2>
+            <p>
+              The GPA Calculator is a command-line application developed in C++
+              that helps students calculate their Grade Point Average (GPA)
+              based on their course grades. It provides an accurate GPA
+              calculation.
+            </p>
+            <img
+              src="./assets/pass_coding_projects/app-cpp-gpa-calculator.png"
+              alt="Project 2"
+              class="project-img"
+            />
+            <button
+              class="btn btn-color-2 project-btn"
+              onclick="window.open('https://github.com/nikazizi563/cpp-GPA-Calculator/', '_blank')"
+            >
+              Github
+            </button>
+          </div>
+          <div class="project-card">
+            <h2>gForm Prefilled [Android Studio]</h2>
+            <p>
+              gForm Prefilled is an Android application built using Android
+              Studio that automates the process of filling out Google Forms. It
+              saves time and effort by pre-filling forms with user-specific
+              information.
+            </p>
+            <img
+              src="./assets/pass_coding_projects/app-androidstudio-gform-prefill.png"
+              alt="Project 3"
+              class="project-img"
+            />
+            <button
+              class="btn btn-color-2 project-btn"
+              onclick="window.open('https://github.com/nikazizi563/AndroidStudio-gForm-AutoFill/', '_blank')"
+            >
+              Github
+            </button>
+          </div>
+          <div class="project-card">
+            <h2>Prayer Time Clock [Python]</h2>
+            <p>
+              The Prayer Time Clock is a Python application that calculates and
+              displays prayer times for users based on their geographic
+              location. It provides reminders and notifications for prayer times
+              throughout the day.
+            </p>
+            <img
+              src="./assets/pass_coding_projects/app-python-prayer-times.png"
+              alt="Project 4"
+              class="project-img"
+            />
+            <button
+              class="btn btn-color-2 project-btn"
+              onclick="window.open('https://github.com/nikazizi563/app-maso-maye', '_blank')"
+            >
+              Github
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-heading-container">
+        <button
+          class="btn btn-color-3"
+          onclick="window.location.href='/'"
+        >
+          <span>Back to Home</span>
+        </button>
+      </div>
+
+      <button id="backToTop" title="Back to Top" style="display: none">
+        &uarr;
+      </button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

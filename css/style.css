@@ -1,0 +1,324 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f4f8; /* Light Grayish Blue */
+  color: #333;
+  line-height: 1.6;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #343a40; /* Dark Blue Gray */
+  color: #ecf0f1; /* Light Gray */
+  padding: 15px 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header.sticky {
+  background-color: #1a252f; /* Darker Blue Gray for sticky state */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.header .logo {
+  font-size: 1.6em;
+  font-weight: 700;
+}
+
+.header .menu-toggle {
+  display: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #ecf0f1; /* Light Gray */
+}
+
+.header nav {
+  display: flex;
+}
+
+.header nav ul {
+  display: flex;
+  list-style: none;
+}
+
+.header nav ul li {
+  margin: 0 20px;
+}
+
+.header nav ul li a {
+  color: #ecf0f1; /* Light Gray */
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.header nav ul li a:hover {
+  color: #3498db; /* Bright Blue */
+  transform: translateY(-3px);
+  text-decoration: underline; /* Underline effect on hover */
+}
+
+.section__pic-container img {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  object-fit: cover; /* Ensures the image covers the container while keeping aspect ratio */
+  object-position: top; /* Crops the image from the top */
+  margin-bottom: 1rem;
+}
+
+.text-container {
+  display: flex;
+  justify-content: center; /* Horizontally centers the text */
+  align-items: center; /* Vertically centers the text */
+  text-align: center; /* Ensures the text itself is centered */
+}
+
+.text-container p {
+  max-width: 600px; /* Optional: to limit the width for better readability */
+  font-size: 1.1rem; /* Adjust font size for better visibility */
+}
+
+.hero {
+  height: 100vh;
+  background: url('your-hero-image.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #343a40; /* Dark Blue Gray */
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 4em;
+  margin-bottom: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.5em;
+  margin-bottom: 25px;
+  font-weight: 300;
+}
+
+.btn-main {
+  background: #3498db; /* Bright Blue */
+  color: #ecf0f1; /* Light Gray */
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-main:hover {
+  background: #2980b9; /* Slightly Darker Blue */
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+a {
+  text-decoration: none;
+  color: blue;
+}
+
+.container {
+  width: 70%;
+  max-width: 1200px;
+  margin: 70px auto;
+  padding: 20px;
+}
+
+.section {
+  background: #ffffff; /* White */
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 2.2em;
+  font-weight: 600;
+  color: #343a40; /* Dark Blue Gray */
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  margin-bottom: 12px;
+  font-size: 1.1em;
+}
+
+.footer {
+  background: #343a40; /* Dark Blue Gray */
+  color: #ecf0f1; /* Light Gray */
+  text-align: center;
+  padding: 25px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.social-links a {
+  color: #ecf0f1; /* Light Gray */
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #3498db; /* Bright Blue */
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #343a40; /* Dark Blue Gray */
+  color: #ecf0f1; /* Light Gray */
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.back-to-top:hover {
+  background: #1a252f; /* Even Darker Blue Gray */
+  transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header .menu-toggle {
+    display: block;
+  }
+
+  .header nav {
+    display: none; /* Hidden by default on mobile */
+    position: absolute;
+    top: 60px;
+    background-color: #56697c; /* Dark Blue Gray */
+    width: 90%;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+
+  .header nav.active {
+    display: block; /* Show menu when active */
+  }
+
+  .header nav ul {
+    flex-direction: column;
+  }
+
+  .header nav ul li {
+    margin: 15px 0;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5em;
+  }
+
+  .hero-content p {
+    font-size: 1.2em;
+  }
+
+  .container {
+    width: 95%;
+    padding: 10px;
+  }
+
+  .section {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2em;
+  }
+
+  .hero-content p {
+    font-size: 1em;
+  }
+
+  .btn-main {
+    padding: 10px 20px;
+  }
+}
+
+/* Container for the introductory paragraph */
+.intro-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section-intro {
+  font-size: 1.2em;
+  font-weight: 500;
+  color: #3498db; /* Bright Blue */
+  transition: color 0.3s ease;
+}
+
+.section-intro a {
+  text-decoration: none;
+}
+
+.section-intro a:hover {
+  color: #2980b9; /* Slightly Darker Blue */
+  text-decoration: underline;
+}
+
+/* List styling */
+.skills-list {
+  list-style: none;
+  padding: 0;
+}
+
+.skill-link {
+  color: #3498db; /* Bright Blue */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.skill-link:hover {
+  color: #2980b9; /* Slightly Darker Blue */
+  transform: translateY(-2px);
+  text-decoration: underline;
+}
