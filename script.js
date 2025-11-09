@@ -31,7 +31,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const links = document.querySelectorAll('header nav a');
   const header = document.querySelector('.header'); // your fixed header
-  const extraOffset = 40; // adjust this value as needed
+  const extraOffset = 60; // adjust this value as needed
 
   links.forEach(link => {
     link.addEventListener('click', function (e) {
