@@ -176,7 +176,9 @@ ul li {
   color: #ecf0f1; /* Light Gray */
   text-align: center;
   padding: 25px;
+  border-radius: 20px; /* Rounded edges */
 }
+
 
 .social-links {
   display: flex;
