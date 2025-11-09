@@ -31,6 +31,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const links = document.querySelectorAll('header nav a');
   const header = document.querySelector('.header'); // your fixed header
+  const extraOffset = 20; // adjust this value as needed
 
   links.forEach(link => {
     link.addEventListener('click', function (e) {
@@ -38,8 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = document.querySelector(this.getAttribute('href'));
       const headerHeight = header.offsetHeight;
 
-      // Calculate the correct position
-      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+      // Calculate the position with extra offset
+      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - extraOffset;
 
       window.scrollTo({
         top: targetPosition,
@@ -51,7 +52,17 @@ document.addEventListener('DOMContentLoaded', () => {
       menu.classList.remove('active');
     });
   });
+
+  // Event listener to close the menu when clicking outside of it
+  const menu = document.getElementById('nav-menu');
+  document.addEventListener('click', function (e) {
+    const menuToggle = document.querySelector('.menu-toggle');
+    if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
+      menu.classList.remove('active');
+    }
+  });
 });
+
 
 
 });
