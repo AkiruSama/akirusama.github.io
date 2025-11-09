@@ -362,15 +362,13 @@ ul li {
   transition: width 1.5s ease-in-out;
 }
 
-
-
 .contact-section {
-  background: #f8f9fa;
+  background: #f8f9fa; /* Light Gray background */
   padding: 40px 20px;
   border-radius: 12px;
   text-align: left;
-  max-width: 500px;
-  margin: 0 auto;
+  max-width: 800px; /* Wider than before */
+  margin: 50px auto 50px auto; /* Add top/bottom spacing from footer */
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
