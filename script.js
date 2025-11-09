@@ -28,24 +28,16 @@
 //       }
 //   });
 
-document.addEventListener('DOMContentLoaded', () => {
-  const links = document.querySelectorAll('header nav a');
-  const header = document.querySelector('.header'); // your fixed header
-  const extraOffset = 60; // adjust this value as needed
+const headerHeight = 90; // navbar + extra space
 
-  links.forEach(link => {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      const headerHeight = header.offsetHeight;
+link.addEventListener('click', function (e) {
+  e.preventDefault();
+  const target = document.querySelector(this.getAttribute('href'));
+  const topPos = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
 
-      // Calculate the position with extra offset
-      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - extraOffset;
+  window.scrollTo({ top: topPos, behavior: 'smooth' });
+});
 
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
-      });
 
       // Close menu on mobile after click
       const menu = document.getElementById('nav-menu');
