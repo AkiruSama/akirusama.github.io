@@ -34,3 +34,15 @@ window.addEventListener('scroll', function () {
   const menu = document.getElementById('nav-menu');
   menu.classList.remove('active');
 });
+
+  const skills = document.querySelectorAll('.skill-fill');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.transition = 'width 1.5s ease-in-out';
+        entry.target.style.width = entry.target.getAttribute('style').split(':')[1];
+      }
+    });
+  }, { threshold: 0.5 });
+
+  skills.forEach(skill => observer.observe(skill));
