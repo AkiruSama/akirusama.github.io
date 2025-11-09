@@ -363,12 +363,12 @@ ul li {
 }
 
 .contact-section {
-  background: #f8f9fa; /* Light Gray background */
+  background: #ffffff; /* pure white */
   padding: 40px 20px;
   border-radius: 12px;
   text-align: left;
-  max-width: 800px; /* Wider than before */
-  margin: 50px auto 50px auto; /* Add top/bottom spacing from footer */
+  max-width: 100%; /* allow it to take full container width */
+  margin: 0 auto;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
