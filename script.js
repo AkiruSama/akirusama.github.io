@@ -5,9 +5,18 @@ document.addEventListener('DOMContentLoaded', () => {
   links.forEach(link => {
       link.addEventListener('click', function (e) {
           e.preventDefault();
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-              behavior: 'smooth'
-          });
+          // document.querySelector(this.getAttribute('href')).scrollIntoView({
+          //     behavior: 'smooth'
+          // });
+        const target = document.querySelector(this.getAttribute('href'));
+        const offset = 80; // adjust this based on your navbar height (in px)
+        const elementPosition = target.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - offset;
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
       });
   });
   // Event listener to close the menu when clicking outside of it
