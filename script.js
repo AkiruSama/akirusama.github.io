@@ -81,14 +81,23 @@ window.addEventListener('scroll', function () {
   menu.classList.remove('active');
 });
 
-  const skills = document.querySelectorAll('.skill-fill');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.transition = 'width 1.5s ease-in-out';
-        entry.target.style.width = entry.target.getAttribute('style').split(':')[1];
-      }
-    });
-  }, { threshold: 0.5 });
+//skills bar section
+const skills = document.querySelectorAll('.skill-fill');
 
-  skills.forEach(skill => observer.observe(skill));
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      skills.forEach((skill, index) => {
+        setTimeout(() => {
+          skill.style.width = skill.getAttribute('data-skill');
+        }, index * 300); // 300ms delay between each bar
+      });
+      observer.disconnect(); // stop observing after animation starts
+    }
+  });
+}, { threshold: 0.5 });
+
+skills.forEach(skill => {
+  skill.style.width = '0%'; // start from 0
+  observer.observe(skill);
+});
