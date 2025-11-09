@@ -347,24 +347,21 @@ ul li {
 }
 
 .skill-bar {
-  background-color: #e4e4e4;
-  border-radius: 20px;
+  background: #e0e0e0;
+  border-radius: 25px;
+  height: 20px;
+  margin-top: 5px;
   overflow: hidden;
-  height: 14px;
-  position: relative;
 }
 
 .skill-fill {
   height: 100%;
-  background: linear-gradient(90deg, #00b4db, #0083b0);
-  border-radius: 20px;
-  text-align: right;
-  padding-right: 10px;
-  font-size: 12px;
-  color: #fff;
-  line-height: 14px;
+  width: 0%; /* start from 0 */
+  background: #3498db; /* blue */
+  border-radius: 25px;
   transition: width 1.5s ease-in-out;
 }
+
 
 
 .contact-section {
