@@ -28,7 +28,7 @@
 //       }
 //   });
 
-const headerHeight = 90; // navbar + extra space
+const headerHeight = 120; // navbar + extra space
 
 link.addEventListener('click', function (e) {
   e.preventDefault();
