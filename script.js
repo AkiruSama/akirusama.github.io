@@ -1,51 +1,29 @@
-// // Smooth Scroll for navigation links
-// document.addEventListener('DOMContentLoaded', () => {
-//   const links = document.querySelectorAll('header nav a');
-//   const menu = document.getElementById('nav-menu');
-//   links.forEach(link => {
-//       link.addEventListener('click', function (e) {
-//           e.preventDefault();
-//           // document.querySelector(this.getAttribute('href')).scrollIntoView({
-//           //     behavior: 'smooth'
-//           // });
-//         const target = document.querySelector(this.getAttribute('href'));
-//         const offset = 80; // adjust this based on your navbar height (in px)
-//         const elementPosition = target.getBoundingClientRect().top + window.scrollY;
-//         const offsetPosition = elementPosition - offset;
-        
-//         window.scrollTo({
-//           top: offsetPosition,
-//           behavior: 'smooth'
-//         });
-//       });
-//   });
-//   // Event listener to close the menu when clicking outside of it
-//   document.addEventListener('click', function (e) {
-//       const menuToggle = document.querySelector('.menu-toggle'); // The button that opens the menu
+document.addEventListener("DOMContentLoaded", () => {
+  const headerHeight = 120; // Adjust offset for fixed header
+  const navLinks = document.querySelectorAll('nav ul li a');
 
-//       if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
-//           menu.classList.remove('active'); // Close menu if click is outside
-//       }
-//   });
+  // Smooth scrolling for navigation links
+  navLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
 
-const headerHeight = 120; // navbar + extra space
+      const target = document.querySelector(this.getAttribute('href'));
+      if (!target) return;
 
-link.addEventListener('click', function (e) {
-  e.preventDefault();
-  const target = document.querySelector(this.getAttribute('href'));
-  const topPos = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+      const topPos = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
 
-  window.scrollTo({ top: topPos, behavior: 'smooth' });
-});
+      window.scrollTo({
+        top: topPos,
+        behavior: 'smooth'
+      });
 
-
-      // Close menu on mobile after click
+      // Close menu on mobile after clicking
       const menu = document.getElementById('nav-menu');
       menu.classList.remove('active');
     });
   });
 
-  // Event listener to close the menu when clicking outside of it
+  // Close menu when clicking outside
   const menu = document.getElementById('nav-menu');
   document.addEventListener('click', function (e) {
     const menuToggle = document.querySelector('.menu-toggle');
@@ -53,43 +31,47 @@ link.addEventListener('click', function (e) {
       menu.classList.remove('active');
     }
   });
+
+  // Back to top button
+  const backToTopButton = document.querySelector('.back-to-top');
+  backToTopButton.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Close navbar menu on scroll
+  window.addEventListener('scroll', () => {
+    menu.classList.remove('active');
+  });
+
+  // Skills bar animation when visible
+  const skills = document.querySelectorAll('.skill-fill');
+
+  // Store actual width in a data attribute
+  skills.forEach(skill => {
+    const actualWidth = skill.style.width;
+    skill.setAttribute('data-skill', actualWidth);
+    skill.style.width = '0%'; // start from 0
+  });
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        skills.forEach((skill, index) => {
+          setTimeout(() => {
+            skill.style.width = skill.getAttribute('data-skill');
+          }, index * 200);
+        });
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.5 });
+
+  const skillsSection = document.querySelector('#skills');
+  if (skillsSection) observer.observe(skillsSection);
 });
 
-
-
-});
+// Toggle mobile menu
 function toggleMenu() {
   const menu = document.getElementById('nav-menu');
   menu.classList.toggle('active');
 }
-
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-// Toggle Navbar Active State on Scroll
-window.addEventListener('scroll', function () {
-  const menu = document.getElementById('nav-menu');
-  menu.classList.remove('active');
-});
-
-//skills bar section
-const skills = document.querySelectorAll('.skill-fill');
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      skills.forEach((skill, index) => {
-        setTimeout(() => {
-          skill.style.width = skill.getAttribute('data-skill');
-        }, index * 300); // 300ms delay between each bar
-      });
-      observer.disconnect(); // stop observing after animation starts
-    }
-  });
-}, { threshold: 0.5 });
-
-skills.forEach(skill => {
-  skill.style.width = '0%'; // start from 0
-  observer.observe(skill);
-});
